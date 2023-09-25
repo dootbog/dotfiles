@@ -1,7 +1,7 @@
 autodetach on
 startup_message off
 defscrollback 10000
-altscreen on # clear screen after closing some programs
+altscreen on
 defflow auto
 shell -bash
 defutf8 on
