@@ -1,0 +1,10 @@
+[push]
+	autoSetupRemote = true
+[alias]
+	aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'
+	alias = "!sh -c '[ $# = 2 ] && git config --global alias.\"$1\" \"$2\" && exit 0 || echo \"usage: git alias <new alias> <original command>\" >&2 && exit 1' -"
+	ll = log --oneline --graph
+	bs = status -bs
+	last = log -1 HEAD --stat
+	staged = diff --name-only --cached
+	notstaged = ls-files -m
