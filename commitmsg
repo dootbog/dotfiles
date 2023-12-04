@@ -1,0 +1,9 @@
+msg=$1
+branch=$(git symbolic-ref --short HEAD)
+ticket=$(echo $branch | grep -Eo '^(\w+/)?(\w+[-_])?[0-9]+')
+if [[ $ticket == "" ]];then
+  printf "[ERROR] %s branch does not reference a ticket number\n" $branch >&2
+  exit 1
+fi
+printf "%s " "refs#" $ticket $msg >&1
+exit 0
